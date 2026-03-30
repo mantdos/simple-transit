@@ -9,6 +9,10 @@
       "destination": "/tutorial.html"
     },
     {
+      "source": "/openclaw",
+      "destination": "/openclaw.html"
+    },
+    {
       "source": "/usage",
       "destination": "/usage.html"
     }

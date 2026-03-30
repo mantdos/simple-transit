@@ -289,6 +289,19 @@
                 Claude Code 安装教程
               </a>
               <a
+                href="/openclaw"
+                class="nav-link inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium transition"
+              >
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M13.5 3H8a2 2 0 0 0-2 2v4.5" />
+                  <path d="M10.5 21H16a2 2 0 0 0 2-2v-4.5" />
+                  <path d="M3 13.5V16a2 2 0 0 0 2 2h2.5" />
+                  <path d="M21 10.5V8a2 2 0 0 0-2-2h-2.5" />
+                  <path d="M8.5 8.5h7v7h-7z" />
+                </svg>
+                OpenClaw 教程
+              </a>
+              <a
                 href="/usage"
                 class="nav-link inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium transition"
               >
@@ -423,17 +436,17 @@ irm https://claude.ai/install.ps1 | iex</code></pre>
                     </li>
                     <li>
                       <code>ANTHROPIC_BASE_URL</code>：API 服务地址（本站提供的连接点 URL：
-                      <code>https://wx-tech-api.vercel.app</code>）
+                      <code>https://api.jc-space.cloud</code>）
                     </li>
                   </ul>
 
                   <h3>临时配置（当前会话有效）</h3>
                   <h4>方法1：使用 PowerShell</h4>
-                  <pre><code class="language-powershell">$env:ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"
+                  <pre><code class="language-powershell">$env:ANTHROPIC_BASE_URL="https://api.jc-space.cloud"
 $env:ANTHROPIC_AUTH_TOKEN="您的Token"</code></pre>
 
                   <h4>方法2：使用命令提示符（CMD）</h4>
-                  <pre><code class="language-cmd">set ANTHROPIC_BASE_URL=https://wx-tech-api.vercel.app
+                  <pre><code class="language-cmd">set ANTHROPIC_BASE_URL=https://api.jc-space.cloud
 set ANTHROPIC_AUTH_TOKEN=您的Token</code></pre>
 
                   <h3>永久配置（推荐）</h3>
@@ -455,7 +468,7 @@ set ANTHROPIC_AUTH_TOKEN=您的Token</code></pre>
 
                   <h4>方法2：通过 PowerShell 配置</h4>
                   <p>在 PowerShell 中运行以下命令设置用户级环境变量：</p>
-                  <pre><code class="language-powershell">[System.Environment]::SetEnvironmentVariable("ANTHROPIC_BASE_URL", "https://wx-tech-api.vercel.app", [System.EnvironmentVariableTarget]::User)
+                  <pre><code class="language-powershell">[System.Environment]::SetEnvironmentVariable("ANTHROPIC_BASE_URL", "https://api.jc-space.cloud", [System.EnvironmentVariableTarget]::User)
 
 [System.Environment]::SetEnvironmentVariable("ANTHROPIC_AUTH_TOKEN", "你的API密钥", [System.EnvironmentVariableTarget]::User)</code></pre>
 
@@ -527,7 +540,7 @@ curl -fsSL https://claude.ai/install.sh | bash</code></pre>
 
                   <h3>使用配置文件</h3>
                   <p>您也可以创建 <code>.env</code> 文件来管理环境变量：</p>
-                  <pre><code>ANTHROPIC_BASE_URL=https://wx-tech-api.vercel.app
+                  <pre><code>ANTHROPIC_BASE_URL=https://api.jc-space.cloud
 ANTHROPIC_AUTH_TOKEN=您的Token</code></pre>
 
                   <hr />
@@ -610,12 +623,12 @@ ANTHROPIC_AUTH_TOKEN=您的Token</code></pre>
                   <ul>
                     <li><code>ANTHROPIC_AUTH_TOKEN</code>：你的授权令牌</li>
                     <li>
-                      <code>ANTHROPIC_BASE_URL</code>：API 服务地址（连接点：<code>https://wx-tech-api.vercel.app</code>）
+                      <code>ANTHROPIC_BASE_URL</code>：API 服务地址（连接点：<code>https://api.jc-space.cloud</code>）
                     </li>
                   </ul>
 
                   <h3>方法 1：临时配置（当前会话有效）</h3>
-                  <pre><code class="language-bash">export ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"
+                  <pre><code class="language-bash">export ANTHROPIC_BASE_URL="https://api.jc-space.cloud"
 export ANTHROPIC_AUTH_TOKEN="您的Token"</code></pre>
 
                   <h3>方法 2：永久配置（推荐）</h3>
@@ -625,15 +638,15 @@ export ANTHROPIC_AUTH_TOKEN="您的Token"</code></pre>
 
                   <h4>Zsh 配置（macOS 默认）</h4>
                   <pre><code class="language-bash">echo -e '\nexport ANTHROPIC_AUTH_TOKEN="您的Token"' &gt;&gt; ~/.zshrc
-echo -e '\nexport ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"' &gt;&gt; ~/.zshrc
+echo -e '\nexport ANTHROPIC_BASE_URL="https://api.jc-space.cloud"' &gt;&gt; ~/.zshrc
 
 source ~/.zshrc</code></pre>
 
                   <h4>Bash 配置</h4>
                   <pre><code class="language-bash">echo -e '\nexport ANTHROPIC_AUTH_TOKEN="您的Token"' &gt;&gt; ~/.bash_profile
-echo -e '\nexport ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"' &gt;&gt; ~/.bash_profile
+echo -e '\nexport ANTHROPIC_BASE_URL="https://api.jc-space.cloud"' &gt;&gt; ~/.bash_profile
 echo -e '\nexport ANTHROPIC_AUTH_TOKEN="您的Token"' &gt;&gt; ~/.bashrc
-echo -e '\nexport ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"' &gt;&gt; ~/.bashrc
+echo -e '\nexport ANTHROPIC_BASE_URL="https://api.jc-space.cloud"' &gt;&gt; ~/.bashrc
 
 source ~/.bash_profile
 source ~/.bashrc</code></pre>
@@ -657,7 +670,7 @@ claude 你是什么大模型</code></pre>
 
                   <h2>快速启动示例</h2>
                   <h3>临时使用</h3>
-                  <pre><code class="language-bash">export ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"
+                  <pre><code class="language-bash">export ANTHROPIC_BASE_URL="https://api.jc-space.cloud"
 export ANTHROPIC_AUTH_TOKEN="您的Token"
 
 cd your-project-folder
@@ -764,11 +777,11 @@ node --version</code></pre>
                   <p>您需要配置两个环境变量：</p>
                   <ul>
                     <li><code>ANTHROPIC_AUTH_TOKEN</code>：你的授权令牌</li>
-                    <li><code>ANTHROPIC_BASE_URL</code>：<code>https://wx-tech-api.vercel.app</code></li>
+                    <li><code>ANTHROPIC_BASE_URL</code>：<code>https://api.jc-space.cloud</code></li>
                   </ul>
 
                   <h3>方法 1：临时配置（当前会话有效）</h3>
-                  <pre><code class="language-bash">export ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"
+                  <pre><code class="language-bash">export ANTHROPIC_BASE_URL="https://api.jc-space.cloud"
 export ANTHROPIC_AUTH_TOKEN="您的Token"</code></pre>
 
                   <h3>方法 2：永久配置（推荐）</h3>
@@ -881,14 +894,14 @@ claude --version
 ### **方法1：使用 PowerShell**
 
 ```powershell
-$env:ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"
+$env:ANTHROPIC_BASE_URL="https://api.jc-space.cloud"
 $env:ANTHROPIC_AUTH_TOKEN="您的Token"
 ```
 
 ### **方法2：使用命令提示符（CMD）**
 
 ```bash
-set ANTHROPIC_BASE_URL=https://wx-tech-api.vercel.app
+set ANTHROPIC_BASE_URL=https://api.jc-space.cloud
 set ANTHROPIC_AUTH_TOKEN=您的Token
 ```
 
@@ -966,7 +979,7 @@ curl -fsSL https://claude.ai/install.sh | bash
 您也可以创建 `.env` 文件来管理环境变量：
 
 ```
-ANTHROPIC_BASE_URL=https://wx-tech-api.vercel.app
+ANTHROPIC_BASE_URL=https://api.jc-space.cloud
 ANTHROPIC_AUTH_TOKEN=您的Token
 ```
 
@@ -1089,7 +1102,7 @@ claude --version
 # **方法 1：临时配置（当前会话有效）**
 
 ```bash
-export ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"
+export ANTHROPIC_BASE_URL="https://api.jc-space.cloud"
 export ANTHROPIC_AUTH_TOKEN="您的Token"
 ```
 
@@ -1110,7 +1123,7 @@ echo $SHELL
 
 ```bash
 echo -e '\nexport ANTHROPIC_AUTH_TOKEN="您的Token"' >> ~/.zshrc
-echo -e '\nexport ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"' >> ~/.zshrc
+echo -e '\nexport ANTHROPIC_BASE_URL="https://api.jc-space.cloud"' >> ~/.zshrc
 ```
 
 重新加载配置：
@@ -1125,9 +1138,9 @@ source ~/.zshrc
 
 ```bash
 echo -e '\nexport ANTHROPIC_AUTH_TOKEN="您的Token"' >> ~/.bash_profile
-echo -e '\nexport ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"' >> ~/.bash_profile
+echo -e '\nexport ANTHROPIC_BASE_URL="https://api.jc-space.cloud"' >> ~/.bash_profile
 echo -e '\nexport ANTHROPIC_AUTH_TOKEN="您的Token"' >> ~/.bashrc
-echo -e '\nexport ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"' >> ~/.bashrc
+echo -e '\nexport ANTHROPIC_BASE_URL="https://api.jc-space.cloud"' >> ~/.bashrc
 ```
 
 重新加载配置：
@@ -1167,7 +1180,7 @@ claude 你是什么大模型
 
 ```bash
 # 设置环境变量
-export ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"
+export ANTHROPIC_BASE_URL="https://api.jc-space.cloud"
 export ANTHROPIC_AUTH_TOKEN="您的Token"
 
 # 进入项目目录并启动
@@ -1197,7 +1210,7 @@ cat > ~/setup-claude.sh << 'EOF'
 echo "正在配置 Claude Code 环境变量..."
 
 # 替换为您的实际值
-export ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"
+export ANTHROPIC_BASE_URL="https://api.jc-space.cloud"
 export ANTHROPIC_AUTH_TOKEN="您的Token"
 
 # 写入配置文件
@@ -1385,7 +1398,7 @@ Type=simple
 User=your-username
 WorkingDirectory=/home/your-username
 Environment="ANTHROPIC_AUTH_TOKEN=您的Token"
-Environment="ANTHROPIC_BASE_URL=https://wx-tech-api.vercel.app"
+Environment="ANTHROPIC_BASE_URL=https://api.jc-space.cloud"
 ExecStart=/usr/bin/claude daemon
 Restart=on-failure
 
@@ -1417,7 +1430,7 @@ docker build -t claude-code .
 # 运行容器
 docker run -it --rm \
   -e ANTHROPIC_AUTH_TOKEN="您的Token" \
-  -e ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app" \
+  -e ANTHROPIC_BASE_URL="https://api.jc-space.cloud" \
   -v $(pwd):/workspace \
   claude-code
 ```
@@ -1467,7 +1480,7 @@ source ~/.bashrc
 
 ```bash
 # 测试 API 连接
-curl -I "https://wx-tech-api.vercel.app"
+curl -I "https://api.jc-space.cloud"
 ```
 
 # **查看日志**
@@ -1626,7 +1639,7 @@ claude --version
 # **方法 1：临时配置（当前会话有效）**
 
 ```bash
-export ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"
+export ANTHROPIC_BASE_URL="https://api.jc-space.cloud"
 export ANTHROPIC_AUTH_TOKEN="您的Token"
 ```
 
@@ -1644,9 +1657,9 @@ echo $SHELL
 
 ```bash
 echo -e '\nexport ANTHROPIC_AUTH_TOKEN="您的Token"' >> ~/.bash_profile
-echo -e '\nexport ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"' >> ~/.bash_profile
+echo -e '\nexport ANTHROPIC_BASE_URL="https://api.jc-space.cloud"' >> ~/.bash_profile
 echo -e '\nexport ANTHROPIC_AUTH_TOKEN="您的Token"' >> ~/.bashrc
-echo -e '\nexport ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"' >> ~/.bashrc
+echo -e '\nexport ANTHROPIC_BASE_URL="https://api.jc-space.cloud"' >> ~/.bashrc
 ```
 
 重新加载配置：
@@ -1660,7 +1673,7 @@ source ~/.bashrc
 
 ```bash
 echo -e '\nexport ANTHROPIC_AUTH_TOKEN="您的Token"' >> ~/.zshrc
-echo -e '\nexport ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"' >> ~/.zshrc
+echo -e '\nexport ANTHROPIC_BASE_URL="https://api.jc-space.cloud"' >> ~/.zshrc
 
 # 重新加载
 source ~/.zshrc
@@ -1670,7 +1683,7 @@ source ~/.zshrc
 
 ```bash
 set -Ux ANTHROPIC_AUTH_TOKEN "您的Token"
-set -Ux ANTHROPIC_BASE_URL "https://wx-tech-api.vercel.app"
+set -Ux ANTHROPIC_BASE_URL "https://api.jc-space.cloud"
 ```
 
 ---
@@ -1703,7 +1716,7 @@ claude 你是什么大模型
 
 ```bash
 # 设置环境变量
-export ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"
+export ANTHROPIC_BASE_URL="https://api.jc-space.cloud"
 export ANTHROPIC_AUTH_TOKEN="您的Token"
 
 # 进入项目目录并启动
@@ -1733,7 +1746,7 @@ cat > ~/setup-claude.sh << 'EOF'
 echo "正在配置 Claude Code 环境变量..."
 
 # 替换为您的实际值
-ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app"
+ANTHROPIC_BASE_URL="https://api.jc-space.cloud"
 ANTHROPIC_AUTH_TOKEN="您的Token"
 
 # 写入配置文件
@@ -1935,7 +1948,7 @@ Type=simple
 User=your-username
 WorkingDirectory=/home/your-username
 Environment="ANTHROPIC_AUTH_TOKEN=您的Token"
-Environment="ANTHROPIC_BASE_URL=https://wx-tech-api.vercel.app"
+Environment="ANTHROPIC_BASE_URL=https://api.jc-space.cloud"
 ExecStart=/usr/bin/claude daemon
 Restart=on-failure
 
@@ -1967,7 +1980,7 @@ docker build -t claude-code .
 # 运行容器
 docker run -it --rm \
   -e ANTHROPIC_AUTH_TOKEN="您的Token" \
-  -e ANTHROPIC_BASE_URL="https://wx-tech-api.vercel.app" \
+  -e ANTHROPIC_BASE_URL="https://api.jc-space.cloud" \
   -v $(pwd):/workspace \
   claude-code
 ```
@@ -2005,7 +2018,7 @@ source ~/.bashrc
 
 ```bash
 # 测试 API 连接
-curl -I "https://wx-tech-api.vercel.app"
+curl -I "https://api.jc-space.cloud"
 ```
 
 # **查看日志**
@@ -2067,6 +2080,7 @@ claude --version
               <div class="mt-4 space-y-2 text-sm">
                 <a href="/" class="block text-slate-300 hover:text-white">首页</a>
                 <a href="/tutorial" class="block text-slate-300 hover:text-white">Claude Code 安装教程</a>
+                <a href="/openclaw" class="block text-slate-300 hover:text-white">OpenClaw 教程</a>
                 <a href="/usage" class="block text-slate-300 hover:text-white">消费查询</a>
               </div>
             </div>
@@ -2283,7 +2297,7 @@ claude --version
         var tabButtons = Array.prototype.slice.call(document.querySelectorAll("[data-tab-btn]"));
         var tabPanels = Array.prototype.slice.call(document.querySelectorAll("[data-tab-panel]"));
 
-        var TRANSFER_BASE_URL = "https://wx-tech-api.vercel.app";
+        var TRANSFER_BASE_URL = "https://api.jc-space.cloud";
         function normalizeMd(md) {
           // 统一把示例域名替换为真实中转地址，并把“余额查询”链接指向本地路由
           return String(md || "")
@@ -2351,4 +2365,4 @@ claude --version
     </script>
   </body>
 </html>
-
+
