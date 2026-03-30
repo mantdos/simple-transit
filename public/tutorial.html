@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Claude Code 安装教程</title>
+    <title>AI 集创空间</title>
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
@@ -259,20 +259,10 @@
         <div class="glass rounded-2xl px-4">
           <div class="flex items-center justify-between gap-4">
             <a href="/" class="flex items-center gap-3 py-2">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-                <defs>
-                  <linearGradient id="logoGradientTutorial" x1="0" y1="0" x2="40" y2="40">
-                    <stop offset="0%" stop-color="#00a6ff" />
-                    <stop offset="100%" stop-color="#ff4590" />
-                  </linearGradient>
-                </defs>
-                <rect width="40" height="40" rx="12" fill="url(#logoGradientTutorial)" />
-                <circle cx="20" cy="20" r="10" fill="rgba(255,255,255,0.18)" />
-                <circle cx="20" cy="20" r="4.2" fill="white" />
-              </svg>
+              <img src="/brand-logo.png" alt="品牌图标" class="h-10 w-10 rounded-xl object-cover brightness-150 contrast-110 drop-shadow-[0_0_10px_rgba(148,163,184,0.35)]" />
               <div class="flex flex-col leading-tight">
-                <span class="text-sm font-extrabold gradient-text">Claude 中转站</span>
-                <span class="text-xs text-slate-400">微欣科技服务</span>
+                <span class="text-sm font-extrabold gradient-text">API 中转站</span>
+                <span class="text-xs font-semibold tracking-wider bg-gradient-to-r from-slate-200 to-slate-400 bg-clip-text text-transparent">AI集创空间</span>
               </div>
             </a>
 
@@ -309,7 +299,7 @@
                   <path d="M16 19V8" />
                   <path d="M20 19v-3" />
                 </svg>
-                消费查询
+                余额查询
               </a>
             </nav>
           </div>
@@ -546,7 +536,7 @@ ANTHROPIC_AUTH_TOKEN=您的Token</code></pre>
                   <p><strong>✅ 安装完成后，您可以：</strong></p>
                   <ul>
                     <li>在任意项目目录使用 <code>claude</code> 命令</li>
-                    <li>前往 <a href="/usage">消费查询</a> 页面查看 API 使用情况</li>
+                    <li>前往 <a href="/usage">余额查询</a> 页面查看 API 使用情况</li>
                     <li>查看官方文档了解更多功能</li>
                   </ul>
                 </div>
@@ -699,7 +689,7 @@ claude</code></pre>
                   <h2>下一步</h2>
                   <ul>
                     <li>在任意项目目录使用 <code>claude</code> 命令</li>
-                    <li>前往 <a href="/usage">消费查询</a> 页面查看 API 使用情况</li>
+                    <li>前往 <a href="/usage">余额查询</a> 页面查看 API 使用情况</li>
                     <li>查看官方文档了解更多功能</li>
                   </ul>
                 </div>
@@ -795,7 +785,7 @@ claude 你是什么大模型</code></pre>
 
                   <h3>下一步</h3>
                   <ul>
-                    <li>前往 <a href="/usage">消费查询</a> 页面查看 API 使用情况</li>
+                    <li>前往 <a href="/usage">余额查询</a> 页面查看 API 使用情况</li>
                     <li>查看官方文档了解更多功能</li>
                   </ul>
                 </div>
@@ -987,7 +977,7 @@ ANTHROPIC_AUTH_TOKEN=您的Token
 ✅ 安装完成后，您可以：
 
 - 在任意项目目录使用 `claude` 命令
-- 前往 [消费查询](/usage) 页面查看 API 使用情况
+- 前往 [余额查询](/usage) 页面查看 API 使用情况
 - 查看官方文档了解更多功能</script>
             <script type="text/plain" id="md-macos"># **macOS 安装教程**
 
@@ -1513,7 +1503,7 @@ claude --version
 ✅ 安装完成后，您可以：
 
 - 在任意项目目录使用 `claude` 命令
-- 前往 [消费查询](/usage) 页面查看 API 使用情况
+- 前往 [余额查询](/usage) 页面查看 API 使用情况
 - 查看官方文档了解更多功能</script>
             <script type="text/plain" id="md-linux"># **Linux 安装教程**
 
@@ -2051,7 +2041,7 @@ claude --version
 ✅ 安装完成后，您可以：
 
 - 在任意项目目录使用 `claude` 命令
-- 前往 [消费查询](/usage) 页面查看 API 使用情况
+- 前往 [余额查询](/usage) 页面查看 API 使用情况
 - 查看官方文档了解更多功能</script>
           </div>
         </div>
@@ -2060,16 +2050,39 @@ claude --version
 
     <footer class="mt-8">
       <div class="mx-auto max-w-6xl px-4">
-        <div class="glass rounded-2xl p-6">
-          <div class="flex items-center gap-3">
-            <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-[#00a6ff]/30 to-[#ff4590]/30 flex items-center justify-center">
-              <span class="text-base font-bold" aria-hidden="true">M</span>
+        <div class="glass rounded-2xl p-6 md:p-8">
+          <div class="grid gap-8 md:grid-cols-3">
+            <div>
+              <div class="flex items-center gap-3">
+                <img src="/brand-logo.png" alt="品牌图标" class="h-10 w-10 rounded-xl object-cover brightness-125 contrast-110" />
+                <span class="text-sm font-semibold text-white">AI集创空间</span>
+              </div>
+              <p class="mt-4 text-sm leading-6 text-slate-400">
+                为您提供稳定、高效、透明的 AI 编程助手专属中转服务。
+              </p>
             </div>
-            <span class="text-sm font-semibold text-white">微欣科技服务</span>
+
+            <div>
+              <h4 class="text-sm font-semibold text-white">快速导航</h4>
+              <div class="mt-4 space-y-2 text-sm">
+                <a href="/" class="block text-slate-300 hover:text-white">首页</a>
+                <a href="/tutorial" class="block text-slate-300 hover:text-white">Claude Code 安装教程</a>
+                <a href="/usage" class="block text-slate-300 hover:text-white">消费查询</a>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-sm font-semibold text-white">政策与支持</h4>
+              <div class="mt-4 space-y-2 text-sm">
+                <a href="#" class="block text-slate-300 hover:text-white">常见问题</a>
+                <a href="#" class="block text-slate-300 hover:text-white">服务条款</a>
+                <a href="#" class="block text-slate-300 hover:text-white">隐私政策</a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="py-6 text-center text-xs text-slate-400">
-          © 2026 微欣科技服务. All rights reserved.
+          <div class="mt-8 border-t border-slate-700/70 pt-5 text-center text-xs text-slate-400">
+            © 2026 AI集创空间. All rights reserved.
+          </div>
         </div>
       </div>
     </footer>
@@ -2272,7 +2285,7 @@ claude --version
 
         var TRANSFER_BASE_URL = "https://wx-tech-api.vercel.app";
         function normalizeMd(md) {
-          // 统一把示例域名替换为真实中转地址，并把“消费查询”链接指向本地路由
+          // 统一把示例域名替换为真实中转地址，并把“余额查询”链接指向本地路由
           return String(md || "")
             // URL 示例已在文本中替换为真实中转地址，这里无需再额外处理
             .replaceAll(TRANSFER_BASE_URL + "/usage/", "/usage")
@@ -2338,4 +2351,4 @@ claude --version
     </script>
   </body>
 </html>
-
+
