@@ -13,6 +13,10 @@
       "destination": "/openclaw.html"
     },
     {
+      "source": "/claudecode-config",
+      "destination": "/claudecode-config.html"
+    },
+    {
       "source": "/usage",
       "destination": "/usage.html"
     }
