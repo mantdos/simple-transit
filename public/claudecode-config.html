@@ -251,7 +251,7 @@
             <div class="not-prose mt-5 space-y-4">
               <div>
                 <h3 class="mb-3 text-base font-semibold text-slate-100">Claude 模型</h3>
-                <div class="grid gap-3 sm:grid-cols-2">
+                <div id="supportedClaudeModels" class="grid gap-3 sm:grid-cols-2">
                   <div class="rounded-xl border border-slate-700/80 bg-slate-900/40 px-4 py-3 font-mono text-sm text-slate-100 transition-all duration-300 hover:-translate-y-1 hover:border-[#ea4c89]/50 hover:bg-slate-800/60 hover:shadow-[0_0_15px_rgba(234,76,137,0.15)] cursor-default">claude-opus-4-6</div>
                   <div class="rounded-xl border border-slate-700/80 bg-slate-900/40 px-4 py-3 font-mono text-sm text-slate-100 transition-all duration-300 hover:-translate-y-1 hover:border-[#ea4c89]/50 hover:bg-slate-800/60 hover:shadow-[0_0_15px_rgba(234,76,137,0.15)] cursor-default">claude-opus-4-6-thinking</div>
                   <div class="rounded-xl border border-slate-700/80 bg-slate-900/40 px-4 py-3 font-mono text-sm text-slate-100 transition-all duration-300 hover:-translate-y-1 hover:border-[#ea4c89]/50 hover:bg-slate-800/60 hover:shadow-[0_0_15px_rgba(234,76,137,0.15)] cursor-default">claude-sonnet-4.6</div>
@@ -261,9 +261,9 @@
               </div>
               <div>
                 <h3 class="mb-3 text-base font-semibold text-slate-100">Gemini 模型</h3>
-                <div class="grid gap-3 sm:grid-cols-2">
+                <div id="supportedGeminiModels" class="grid gap-3 sm:grid-cols-2">
                   <div class="rounded-xl border border-slate-700/80 bg-slate-900/40 px-4 py-3 font-mono text-sm text-slate-100 transition-all duration-300 hover:-translate-y-1 hover:border-[#ea4c89]/50 hover:bg-slate-800/60 hover:shadow-[0_0_15px_rgba(234,76,137,0.15)] cursor-default">gemini-3-flash</div>
-                  <div class="rounded-xl border border-slate-700/80 bg-slate-900/40 px-4 py-3 font-mono text-sm text-slate-100 transition-all duration-300 hover:-translate-y-1 hover:border-[#ea4c89]/50 hover:bg-slate-800/60 hover:shadow-[0_0_15px_rgba(234,76,137,0.15)] cursor-default">gemini-3-flash-preview</div>
+                  <div class="rounded-xl border border-slate-700/80 bg-slate-900/40 px-4 py-3 font-mono text-sm text-slate-100 transition-all duration-300 hover:-translate-y-1 hover:border-[#ea4c89]/50 hover:bg-slate-800/60 hover:shadow-[0_0_15px_rgba(234,76,137,0.15)] cursor-default">gemi1ni-3-flash-preview</div>
                 </div>
               </div>
             </div>
@@ -355,6 +355,10 @@
         var copyBtnIcon = document.getElementById("copyBtnIcon");
         var copyBtnText = document.getElementById("copyBtnText");
         var copyToast = document.getElementById("copyToast");
+        var supportedClaudeModels = document.getElementById("supportedClaudeModels");
+        var supportedGeminiModels = document.getElementById("supportedGeminiModels");
+        var MODEL_CARD_CLASS =
+          "rounded-xl border border-slate-700/80 bg-slate-900/40 px-4 py-3 font-mono text-sm text-slate-100 transition-all duration-300 hover:-translate-y-1 hover:border-[#ea4c89]/50 hover:bg-slate-800/60 hover:shadow-[0_0_15px_rgba(234,76,137,0.15)] cursor-default";
         var MODEL_CATALOG = {
           claude: {
             defaultModel: "claude-sonnet-4.6",
@@ -414,6 +418,55 @@
               );
             })
             .join("");
+        }
+
+        function renderSupportedModelCards(container, models) {
+          if (!container || !Array.isArray(models) || !models.length) return;
+          container.innerHTML = "";
+          models.forEach(function (model) {
+            var card = document.createElement("div");
+            card.className = MODEL_CARD_CLASS;
+            card.textContent = model;
+            container.appendChild(card);
+          });
+        }
+
+        function applyRemoteModels(modelsData) {
+          if (!modelsData || typeof modelsData !== "object") return false;
+          var claudeModels = Array.isArray(modelsData.claude) ? modelsData.claude.filter(Boolean) : [];
+          var geminiModels = Array.isArray(modelsData.gemini) ? modelsData.gemini.filter(Boolean) : [];
+          if (!claudeModels.length || !geminiModels.length) return false;
+
+          MODEL_CATALOG.claude.options = claudeModels;
+          MODEL_CATALOG.gemini.options = geminiModels;
+          MODEL_CATALOG.claude.defaultModel = claudeModels[0] || MODEL_CATALOG.claude.defaultModel;
+          MODEL_CATALOG.gemini.defaultModel = geminiModels[0] || MODEL_CATALOG.gemini.defaultModel;
+
+          renderSupportedModelCards(supportedClaudeModels, claudeModels);
+          renderSupportedModelCards(supportedGeminiModels, geminiModels);
+          setModelCategory(selectedCategory);
+          return true;
+        }
+
+        async function fetchRemoteModels() {
+          var controller = new AbortController();
+          var timeoutId = setTimeout(function () {
+            controller.abort();
+          }, 6000);
+
+          try {
+            var response = await fetch("/api/models", {
+              method: "GET",
+              signal: controller.signal,
+            });
+            if (!response.ok) return;
+            var payload = await response.json();
+            if (!payload || payload.ok !== true || !payload.data) return;
+            applyRemoteModels(payload.data);
+          } catch (error) {
+          } finally {
+            clearTimeout(timeoutId);
+          }
         }
 
         function selectModel(model) {
@@ -511,6 +564,7 @@
         setModelCategory("claude");
         renderConfigJson();
         setActive("guide");
+        fetchRemoteModels();
       })();
     </script>
   </body>
